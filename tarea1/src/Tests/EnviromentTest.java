@@ -1,14 +1,13 @@
 package Tests;
 
-import static org.junit.Assert.*;
+import org.junit.runner.RunWith;
+import org.junit.runners.Suite;
+import org.junit.runners.Suite.SuiteClasses;
 
-import org.junit.Test;
-
+@RunWith(Suite.class)
+@SuiteClasses({ 
+		DataProcessorTest.class, 
+        SparkLineTest.class})
 public class EnviromentTest {
-
-	@Test
-	public void test() {
-		fail("Not yet implemented");
-	}
 
 }
