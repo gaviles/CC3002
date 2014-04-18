@@ -4,10 +4,18 @@ import Tarea.Histogram;
 import Processors.SparkLineProcessor;
 
 public class SparkLine extends Histogram {
-
+	
+	public SparkLine(){}
+	
 	public SparkLine(String string) {
-		super();
+		
+		setData(string);
+	}
+	
+	public void setData(String string){
+		
 		textData = string;
 		histogramProcessor = new SparkLineProcessor(textData);
 	}
+	
 }

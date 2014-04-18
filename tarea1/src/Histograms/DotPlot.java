@@ -4,9 +4,16 @@ import Tarea.Histogram;
 import Processors.DotPlotProcessor;
 
 public class DotPlot extends Histogram {
-
+	
+	public DotPlot(){}
+	
 	public DotPlot(String string) {
-		super();
+		
+		setData(string);		
+	}
+	
+	public void setData(String string){
+		
 		textData = string;
 		histogramProcessor = new DotPlotProcessor(textData);
 	}

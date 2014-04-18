@@ -51,6 +51,14 @@ public class DataProcessor {
 			return 0;
 		}
 	}
+	// Returns the percentage of the given number respect of the maximum 
+	// number in the data
+	public double getPercentaje(int number){
+		return (double)number*100 / getMaximum();		
+	}
+	
+	// Return the gap, defined as the difference between the maximum and the minimum 
+	// numbers in the data
 	public int getGap(){
 		return gap;
 	}

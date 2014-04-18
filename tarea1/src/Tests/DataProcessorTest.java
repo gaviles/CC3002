@@ -48,4 +48,16 @@ public class DataProcessorTest {
 		assertTrue( data[2] == 3 );
 		assertTrue( data[3] == 4 );
 	}
+	
+	// Test the percentage function
+	@Test
+	public void test5(){
+		
+		DataProcessor dataProcessor = new DataProcessor("1,2,3,4");
+		
+		assertTrue( dataProcessor.getPercentaje(4) == 100 );
+		assertTrue( dataProcessor.getPercentaje(3) == 75 );
+		assertTrue( dataProcessor.getPercentaje(2) == 50 );
+		assertTrue( dataProcessor.getPercentaje(1) == 25 );
+	}
 }
