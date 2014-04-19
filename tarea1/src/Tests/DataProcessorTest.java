@@ -1,0 +1,63 @@
+package Tests;
+
+import static org.junit.Assert.*;
+import org.junit.Test;
+import Processors.DataProcessor;
+
+public class DataProcessorTest {
+	
+	// Test the basic functions minimum, maximum and gap
+	@Test
+	public void test() {
+		
+		DataProcessor dataProcessor = new DataProcessor("1,2,3,4,20,19,17"); 
+		
+		assertTrue( dataProcessor.getGap() == 19  );
+		assertTrue( dataProcessor.getMaximum() == 20 );
+		assertTrue( dataProcessor.getMinimum() == 1 );
+	}
+	
+	// Test the interval detector function easy case
+	@Test
+	public void test2(){
+		DataProcessor dataProcessor = new DataProcessor("1,2,3,4,5,6,7,8,9");
+		
+		assertTrue( dataProcessor.getInterval(1, 9 ) == 0 );
+		assertTrue( dataProcessor.getInterval(5, 9 ) == 4 );
+		assertTrue( dataProcessor.getInterval(6, 9 ) == 5 );
+		assertTrue( dataProcessor.getInterval(9, 9 ) == 8 );
+	}
+	
+	// Test the interval detector function extreme case (same number)
+	@Test
+	public void test3(){
+		DataProcessor dataProcessor = new DataProcessor("1,1,1");
+		
+		assertTrue( dataProcessor.getInterval(1, 9 ) == 0 );
+	}
+	// Test the parsing system
+	@Test
+	public void test4(){
+		
+		DataProcessor dataProcessor = new DataProcessor("1,2,3,4");
+		
+		int[] data = dataProcessor.getParsedData();
+		
+		assertTrue( data[0] == 1 );
+		assertTrue( data[1] == 2 );
+		assertTrue( data[2] == 3 );
+		assertTrue( data[3] == 4 );
+	}
+	
+	// Test the percentage function
+	@Test
+	public void test5(){
+		
+		DataProcessor dataProcessor = new DataProcessor("1,2,3,4");
+		
+		assertTrue( dataProcessor.getPercentaje(4) == 100 );
+		assertTrue( dataProcessor.getPercentaje(3) == 75 );
+		assertTrue( dataProcessor.getPercentaje(2) == 50 );
+		assertTrue( dataProcessor.getPercentaje(1) == 25 );
+	}
+}
