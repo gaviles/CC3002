@@ -1,0 +1,88 @@
+package tarea.tests;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import Tarea.Histogram;
+import Tarea.Histograms.SparkLine;
+
+
+public class SparkLineTest {
+	
+	// test odd number
+	@Test
+	public void test1() {
+		Histogram histogram1 = new SparkLine("1,2,3,4,5");
+		
+		String histogramTest = new StringBuilder()
+					.append((char)9601)
+					.append((char)9603)
+					.append((char)9605)
+					.append((char)9607)
+					.append((char)9609).toString();
+		assertTrue( histogram1.getHistogram().equals(histogramTest) );
+		histogram1.print();
+	}
+	// test histogram with equal numbers
+	@Test
+	public void test2() {
+		
+		Histogram histogram1 = new SparkLine("1,1,1");
+		
+		String histogramTest = new StringBuilder()
+		.append((char)9601)
+		.append((char)9601)
+		.append((char)9601).toString();
+		
+		assertTrue( histogram1.getHistogram().equals(histogramTest) );
+		histogram1.print();
+	}
+	// test histogram with only two numbers (extremes)
+	@Test
+	public void test3(){
+		Histogram histogram1 = new SparkLine("1,2");
+		String histogramTest = new StringBuilder()
+		.append((char)9601)
+		.append((char)9609).toString();
+		
+		assertTrue( histogram1.getHistogram().equals(histogramTest) );
+		histogram1.print();
+	}
+	// test with even number and only contains extremes values
+	@Test
+	public void test4(){
+		
+		Histogram histogram1 = new SparkLine("1,2,1,2");
+		
+		String histogramTest = new StringBuilder()
+		.append((char)9601)
+		.append((char)9609)
+		.append((char)9601)
+		.append((char)9609).toString();
+		
+		assertTrue( histogram1.getHistogram().equals(histogramTest) );
+		histogram1.print();
+	}
+	
+	// test normal 9 interval histogram 
+	@Test
+	public void test5(){
+		
+		Histogram histogram1 = new SparkLine("1,2,3,4,5,6,7,8,9");
+		
+		String histogramTest = new StringBuilder()
+		.append((char)9601)
+		.append((char)9602)
+		.append((char)9603)
+		.append((char)9604)
+		.append((char)9605)
+		.append((char)9606)
+		.append((char)9607)
+		.append((char)9608)
+		.append((char)9609).toString();
+
+		assertTrue( histogram1.getHistogram().equals(histogramTest) );
+		histogram1.print();		
+	}
+}

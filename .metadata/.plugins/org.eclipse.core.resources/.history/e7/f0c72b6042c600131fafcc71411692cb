@@ -1,0 +1,19 @@
+package Tarea;
+
+import Histograms.DotPlot;
+import Histograms.SparkLine;
+
+public class HistogramCollection {
+	
+	private Histogram[] histogramClases;
+	
+	public HistogramCollection(){
+		histogramClases[0] = new SparkLine();
+		histogramClases[1] = new DotPlot();
+	}
+
+	public Histogram getHistogram(String histogramType, String histogramData) {
+		histogramClases[Integer.parse(histogramType)-1].setData(histogramData);
+		return histogramClases[Integer.parse(histogramType)-1];
+	}
+}

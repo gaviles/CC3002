@@ -1,0 +1,8 @@
+package Tarea;
+
+public class UserIterface {
+	public void static main(String args[]){
+		System.out.print("\n*********************************************\n");
+		System.out.print(  "* Welcome to the console Histogram creator  *");
+	}
+}

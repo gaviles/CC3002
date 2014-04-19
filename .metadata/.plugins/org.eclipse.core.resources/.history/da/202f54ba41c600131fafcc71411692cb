@@ -1,0 +1,43 @@
+package Tarea;
+
+import java.io.*;
+
+import Histograms.*;
+
+public class UserInterface {
+	private Histogram[] histogramClases;
+	
+	public UserInterface(){
+		histogramClases[0] = new SparkLine();
+		histogramClases[1] = new DotPlot();
+	}
+
+	public static void main(String[] args) throws IOException {
+		
+		BufferedReader buffer=new BufferedReader(new InputStreamReader(System.in));
+		
+		System.out.print("\n*********************************************\n");
+		System.out.print(  "* Welcome to the console Histogram creator  *\n");
+		System.out.print(  "* Write the type of Histogram that you want *\n");
+		System.out.print(  "*     Type:             |  Number:          *\n");
+		System.out.print(  "*          SparkLine               1        *\n");
+		System.out.print(  "*          DotPlot                 2        *\n");
+		System.out.print(  "*********************************************\n");
+		System.out.print(" ?>");
+		
+		String histogramType =buffer.readLine();
+		
+		System.out.print("\n Por Favor ingrese los datos\n ?>");
+		
+		String histogramData = buffer.readLine();
+		
+		Histogram histogram  = getHistogram(histogramType,histogramData);
+		histogram.print();
+	}
+	
+	// Set given data to the given histogram type, then return it.
+	public static Histogram getHistogram(String type,String data){
+		int histogramType = Integer.parseInt(type);
+		Histogram histogram = new histogramClases[ (histogramType-1) ].getClass(;
+	}
+}
