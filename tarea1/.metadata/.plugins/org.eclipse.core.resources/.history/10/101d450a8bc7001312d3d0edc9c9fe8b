@@ -1,0 +1,113 @@
+package tarea.Processors;
+
+import java.util.ArrayList;
+
+public class DataProcessor {
+	
+	private int maximum,minimum,gap;
+	private String textData;
+	private int[] data;
+	private ArrayList<IntervalProcessor> intervals;
+	private ArrayList<IntervalProcessor> values;
+	
+	public DataProcessor(String string){
+		setData(string);
+	}
+	public int[] parseData(){
+		return parseData(textData);
+	}
+	public void setData(String string){
+		textData = string;
+		data = parseData();
+	}
+	public int[] parseData(String string){
+		
+		String[] data = string.split(",");		
+		
+		int[] numbers = new int[data.length];
+		
+		maximum = Integer.MIN_VALUE;
+		minimum = Integer.MAX_VALUE;
+		
+		for(int i = 0; i < data.length ; i++ ){
+			
+			numbers[i] = Integer.parseInt(data[i]);
+			
+			addToIntervals(numbers[i]);
+			addToValues(numbers[i]);
+			
+			if(numbers[i]>maximum){
+				maximum = numbers[i];
+			}
+			if(numbers[i]<minimum){
+				minimum = numbers[i];
+			}
+		}
+		
+		gap = maximum-minimum;
+		return numbers;
+	}
+	
+	// Calculates the interval of 10 that the number belongs
+	public void addToIntervals(int number){
+		
+		int intervalMinimum = number - number % 10;
+		int intervalMaximum = intervalMinimum + 10;
+		
+		if( intervalMinimum > number ){
+			intervalMaximum = intervalMinimum;
+			intervalMinimum = intervalMaximum - 10;
+		}
+		
+		addValueTo(number, intervals, true, true, intervalMaximum, intervalMinimum);
+	}
+	
+	// add the number to a values collection to calculates the number of repetitions of the same number
+	public void addToValues(int number){
+		addValueTo(number, values, true, true, number, number);
+	}
+	
+	// General propose adder, adds values to the given ArrayList of IntervalProcessors 
+	private void addValueTo(int number, ArrayList<IntervalProcessor> intervalsList, boolean holdMaximum, boolean holdMinimum, int intervalMaximum, int intervalMinimum){
+		boolean createInterval = true;
+		for(IntervalProcessor interval: intervalsList){
+			if( interval.addNumber(number) ){
+				createInterval = false;
+				break;
+			}
+		}
+		if(createInterval){
+			IntervalProcessor interval = new IntervalProcessor(number,number);
+			interval.setHoldMaximum(holdMaximum);
+			interval.setHoldMinimum(holdMinimum);
+			interval.setMaximum(intervalMaximum);
+			interval.setMinimum(intervalMinimum);
+			interval.addNumber(number);
+			intervalsList.add(interval);
+		}
+	}
+	// This function return the fitting interval of the number given
+	// need to receive the number of interval and the number that
+	// are going to be analyzed
+	// returns the interval between 0 to (intervalsNumber - 1) 
+	public int getInterval(int dataNumber, int intervalsNumber){
+		
+		if(gap > 0){
+			return Math.round( (dataNumber - getMinimum() )*(intervalsNumber-1)/( getGap() ) );
+		}else{
+			return 0;
+		}
+	}
+	public int getGap(){
+		return gap;
+	}
+	public int getMaximum(){
+		return maximum;
+	}
+	public int[] getParsedData(){
+		return data;
+	}
+	public int getMinimum(){
+		return minimum;
+	}
+}

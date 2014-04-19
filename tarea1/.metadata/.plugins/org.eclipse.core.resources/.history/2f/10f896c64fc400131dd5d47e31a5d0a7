@@ -1,0 +1,14 @@
+package tarea;
+import java.io.PrintStream;
+
+public abstract class Histograma {
+	protected String textData;
+	protected HistogramProcessor histogramProcessor;
+	
+	public Histograma(){}
+	
+	public void show(PrintStream printStream ){
+		
+		printStream.print( histogramProcessor.getHistogram() );
+	}
+}

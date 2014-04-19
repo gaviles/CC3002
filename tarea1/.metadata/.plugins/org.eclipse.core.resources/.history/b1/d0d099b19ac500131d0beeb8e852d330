@@ -1,0 +1,20 @@
+package tarea;
+import java.io.PrintStream;
+
+public abstract class Histograma {
+	protected String textData;
+	protected HistogramProcessor histogramProcessor;
+	
+	public Histograma(){
+		super();
+	}
+	public String getHistogram(){
+		return histogramProcessor.getHistogram();
+	}
+	public void setData(String string){
+		textData = string;
+	}
+	public void print(){
+		System.out.println(getHistogram());
+	}
+}

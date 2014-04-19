@@ -1,0 +1,26 @@
+package tarea;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class testTarea {
+
+	@Test
+	public void test() {
+		
+		Histograma histogram1 = new SparkLine("1,2,3,4,5");
+		
+		System.out.println(histogram1.getHistogram());
+		
+		String histogramTest = new StringBuilder()
+					.append((char)9601)
+					.append((char)9603)
+					.append((char)9605)
+					.append((char)9607)
+					.append((char)9609).toString();
+		
+		assertTrue( hist.getHistogram().compareTo(histogramTest) == 1 );
+	}
+
+}

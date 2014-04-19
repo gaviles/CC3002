@@ -1,0 +1,5 @@
+package tarea;
+
+public interface Processor {
+	public String getPrint();
+}

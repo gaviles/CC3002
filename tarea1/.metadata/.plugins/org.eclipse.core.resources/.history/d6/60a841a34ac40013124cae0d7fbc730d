@@ -1,0 +1,6 @@
+package tarea;
+
+public class Histograma {
+	protected String textData;
+	protected Printer print;
+}

@@ -1,0 +1,11 @@
+package tarea;
+
+public class SparkLineProcessor implements HistogramProcessor {
+	
+	
+	
+	public String getHistogram(){
+		return textData;
+	}
+	
+}

@@ -1,0 +1,20 @@
+package tarea.tests;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class Systemtester {
+
+	@RunWith(Suite.class)
+	
+	@Suite.SuiteClases({
+		DataProcessorTest.class,
+		SparkLineTest.class
+	})
+	
+	@Test
+	public void test() {
+	}
+
+}

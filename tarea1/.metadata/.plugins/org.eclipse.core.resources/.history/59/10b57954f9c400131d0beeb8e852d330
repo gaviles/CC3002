@@ -1,0 +1,14 @@
+package tarea;
+
+public class SparkLine extends Histograma {
+
+	public SparkLine(String string) {
+		super();
+		textData = string;
+		histogramProcessor = new SparkLineProcessor();
+	}
+	public boolean isValid(){
+		return true;
+	}
+	
+}

@@ -1,0 +1,16 @@
+package tarea;
+
+public class TextProcessor {
+	
+	public TextProcessor(){
+	}
+	public int[] processData(String string){
+		
+		
+		
+		int[] numbers = new int[];
+		
+		
+		return ;
+	}
+}

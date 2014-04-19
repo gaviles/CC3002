@@ -1,0 +1,24 @@
+package tarea;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class testTarea {
+
+	@Test
+	public void test() {
+		
+		Histograma hist = new SparkLine("1,2,3,4");
+		
+		
+		
+		System.out.println((char)9601);
+		System.out.println((char)9609);
+		String hola = new StringBuilder().append((char)9601).append((char)9602).append((char)9603).toString();
+		
+		
+		System.out.println(hola);
+	}
+
+}

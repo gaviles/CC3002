@@ -1,0 +1,19 @@
+package tarea.tests;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+import tarea.Processors.*;
+
+public class IntervalProcessorTest {
+
+	@Test
+	// Test interval as unit interval example [3,3]
+	public void test1() {
+		IntervalProcessor interval = new IntervalProcessor(3,3);
+		
+		assertEquals(0,interval.getSize());
+		
+	}
+
+}

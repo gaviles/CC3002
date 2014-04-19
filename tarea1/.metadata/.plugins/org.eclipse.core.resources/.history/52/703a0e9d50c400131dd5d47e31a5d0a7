@@ -1,0 +1,8 @@
+package tarea;
+
+public class SparkLine extends Histograma {
+
+	public SparkLine(String string) {
+		textData = string;
+	}
+}

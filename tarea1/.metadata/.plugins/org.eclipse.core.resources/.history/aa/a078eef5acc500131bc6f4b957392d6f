@@ -1,0 +1,63 @@
+package tarea;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class testSparkLine {
+
+	@Test
+	public void test() {
+		
+		Histograma histogram1 = new SparkLine("1,2,3,4,5");
+		
+		String histogramTest = new StringBuilder()
+					.append((char)9601)
+					.append((char)9603)
+					.append((char)9605)
+					.append((char)9607)
+					.append((char)9609).toString();
+		assertTrue( histogram1.getHistogram().equals(histogramTest) );
+		histogram1.print();
+		
+		histogramTest = new StringBuilder()
+		.append((char)9601)
+		.append((char)9601)
+		.append((char)9601).toString();
+		
+		histogram1.setData("1,1,1");
+		
+		assertTrue( histogram1.getHistogram().equals(histogramTest) );
+		histogram1.print();
+		
+		histogramTest = new StringBuilder()
+		.append((char)9601)
+		.append((char)9609).toString();
+		
+		histogram1.setData("1,2");
+		assertTrue( histogram1.getHistogram().equals(histogramTest) );
+		histogram1.print();
+		
+		histogramTest = new StringBuilder()
+		.append((char)9601)
+		.append((char)9609)
+		.append((char)9601)
+		.append((char)9609).toString();
+		
+		histogram1.setData("1,2,1,2");
+		assertTrue( histogram1.getHistogram().equals(histogramTest) );
+		histogram1.print();
+		
+		histogramTest = new StringBuilder()
+		.append((char)9601)
+		.append((char)9609)
+		.append((char)9601)
+		.append((char)9609).toString();
+		
+		histogram1.setData("1,2,1,2");
+		assertTrue( histogram1.getHistogram().equals(histogramTest) );
+		histogram1.print();
+		
+	}
+
+}

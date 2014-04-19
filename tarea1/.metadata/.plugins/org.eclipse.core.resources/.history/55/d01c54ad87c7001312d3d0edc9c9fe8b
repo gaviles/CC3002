@@ -1,0 +1,16 @@
+
+public class tests {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int num = 14;
+		
+		int max = (Integer)((num + 10)/10)*10;
+		int min = num % 10; 
+		
+		System.out.println(max);
+		System.out.println(min);
+	}
+
+}

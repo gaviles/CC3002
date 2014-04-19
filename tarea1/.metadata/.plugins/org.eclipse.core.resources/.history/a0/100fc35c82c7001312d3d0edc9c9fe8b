@@ -1,0 +1,34 @@
+package tarea.Processors;
+
+import java.util.ArrayList;
+
+public class IntervalProcessor {
+	
+	private int maximum,minimum;
+	private ArrayList<Integer> data;
+	
+	public IntervalProcessor(int minimum,int maximum){
+		data = new ArrayList<Integer>();
+		setMinimum(minimum);
+		setMaximum(maximum);
+	}
+	
+	public void addNumber(int number){
+		// verify if you are adding the number to the right interval
+		if( number <= maximum && number > minimum ){
+			data.add(number);
+		}
+	}
+	
+	public void setMaximum(int number){
+		maximum = number;
+	}
+	
+	public void setMinimum(int number){
+		minimum = number;
+	}
+	
+	public int getSize(){
+		return data.size();
+	}
+}

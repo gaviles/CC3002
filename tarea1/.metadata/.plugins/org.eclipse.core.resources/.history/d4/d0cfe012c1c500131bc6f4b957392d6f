@@ -1,0 +1,23 @@
+package tarea.Processors;
+
+public class DotPlotProcessor implements HistogramProcessor {
+	
+	private DataProcessor dataProcessor;
+	private String histogram;
+	private char[] intervalsValue;
+
+	public DotPlotProcessor(String string){
+		
+	}
+	public String getHistogram() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setData(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

@@ -1,0 +1,10 @@
+package tarea;
+
+public class SparkLineProcessor implements HistogramProcessor {
+	public String getHistogram(String string){
+		return string.concat(" hola ");
+	}
+	public boolean isValid(){
+		return true;
+	}
+}

@@ -1,0 +1,13 @@
+package tarea;
+
+public class TextProcessor {
+	
+	public TextProcessor(){
+		
+	}
+	public boolean isValid(String string){
+		
+		
+		return true;
+	}
+}

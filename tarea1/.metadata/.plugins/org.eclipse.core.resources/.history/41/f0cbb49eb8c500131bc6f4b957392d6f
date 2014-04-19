@@ -1,0 +1,22 @@
+package tarea.tests;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import tarea.DataProcessor;
+
+public class DataProcessorTest {
+	
+	// Test the basic functions minimum, maximum and gap
+	@Test
+	public void test() {
+		
+		DataProcessor dataProcessor = new DataProcessor("1,2,3,4,20,19,17"); 
+		
+		assertTrue( dataProcessor.getGap() == 19  );
+		assertTrue( dataProcessor.getMaximum() == 20 );
+		assertTrue( dataProcessor.getMinimum() == 1 );
+	}
+
+}

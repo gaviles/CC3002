@@ -1,0 +1,42 @@
+package tarea.Processors;
+
+import java.util.ArrayList;
+
+public class DotPlotProcessor implements HistogramProcessor {
+	
+	private DataProcessor dataProcessor;
+	private String histogram;
+	private String[] intervalsValue;
+
+	public DotPlotProcessor(String string){
+		intervalsValue = new String[20];
+		intervalsValue[0] = "*";
+		for(int i = 1; i < 20 ; i++ ){
+			intervalsValue[i] = intervalsValue[i].concat("*"); 
+		}
+		setData(string);	
+	}
+	
+	public void setData(String string){
+		dataProcessor = new DataProcessor(string);
+		generateHistogram();
+	}
+	private void generateHistogram(){
+		
+		ArrayList<IntervalProcessor> intervals = dataProcessor.getValues()
+		
+		for(IntervalProcessor interval: intervals){
+			
+			String sms = "".concat( interval.getInterval() ).concat("  ").concat(interval.get)
+			
+			System.out.println();
+		}
+		
+		
+		
+	}
+	
+	public String getHistogram() {
+		return histogram;
+	}
+}
