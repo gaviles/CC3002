@@ -1,6 +1,8 @@
 package tarea.Processors;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class DataProcessor {
 	
@@ -88,7 +90,7 @@ public class DataProcessor {
 			interval.addNumber(number);
 			intervalsList.add(interval);
 		}
-	}
+	}	
 	// This function return the fitting interval of the number given
 	// need to receive the number of interval and the number that
 	// are going to be analyzed
@@ -101,6 +103,28 @@ public class DataProcessor {
 			return 0;
 		}
 	}
+	
+	// Sort the values by number of repetitions
+	public void sortValuesBySize(){
+		sortListBySize(values);
+	}
+	
+	// Sort the given array list of intervals by the size of the interval
+	private void sortListBySize(ArrayList<IntervalProcessor> intervalList){
+		Collections.sort( intervalList, new Comparator<IntervalProcessor>() {
+	        @Override
+	        public int compare(IntervalProcessor  interval1, IntervalProcessor  interval2)
+	        {
+	            return  interval2.getSize() - interval1.getSize();
+	        }
+	    });
+	}
+	
+	// Return the percentage of the given number in relationship of the maximum number given 
+	public int getPercentage(int number){
+		return number*100/maximum;
+	}
+	
 	public int getGap(){
 		return gap;
 	}

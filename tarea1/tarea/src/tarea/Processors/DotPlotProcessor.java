@@ -23,16 +23,40 @@ public class DotPlotProcessor implements HistogramProcessor {
 	}
 	private void generateHistogram(){
 		
-		ArrayList<IntervalProcessor> intervals = dataProcessor.getIntervals();
+		dataProcessor.sortValuesBySize();		
+		ArrayList<IntervalProcessor> intervals = getIntervals();
+		
+		histogram = "valor   |                       | frecuencia\n";
+		int maximumRpetitions = intervals.get(0).getSize();
 		
 		for(IntervalProcessor interval: intervals){
 			
-			String sms = interval.getInterval().concat("  ").concat(String.valueOf(interval.getSize()));
-			System.out.println(sms);
+			String line = " ";
+			int percentage = interval.getSize()*20/maximumRpetitions -1;
+			line = fillWithSpaces( line.concat( interval.getInterval() ) , 8 );
+			line = line.concat("| ");
+			line = line.concat( intervalsValue[percentage] );
+			line = fillWithSpaces(line, 32 );
+			line = line.concat("| ");
+			line = line.concat(String.valueOf(interval.getSize()));
+			histogram = histogram.concat(line).concat("\n");			
 		}
+	}
+	
+	// This function fills the given string with spaces until get the 
+	// given number of length
+	private String fillWithSpaces(String string, int length){
+		if( string.length() < length ){
+			return fillWithSpaces(string.concat(" "), length);
+		}
+		return string;	
 	}
 	
 	public String getHistogram() {
 		return histogram;
+	}
+	
+	public ArrayList<IntervalProcessor> getIntervals(){
+		return dataProcessor.getIntervals();
 	}
 }

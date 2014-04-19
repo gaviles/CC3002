@@ -5,4 +5,8 @@
 <fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="tarea.DataProcessor"/>
 <fullyQualifiedTypeName name="tarea.Processors.SparkLineProcessor"/>
+<fullyQualifiedTypeName name="tarea.Processors.IntervalProcessor"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="tarea.Histograms.DotPlot"/>
+<fullyQualifiedTypeName name="tarea.Histogram"/>
 </qualifiedTypeNameHistroy>

@@ -16,6 +16,7 @@ public class IntervalProcessorTest {
 		assertTrue( interval.addNumber(3) );
 		assertFalse( interval.addNumber(4) );
 		assertEquals( 1,interval.getSize() );
+		assertTrue( interval.getInterval().equals("3") );
 	}
 	
 	@Test
@@ -29,10 +30,12 @@ public class IntervalProcessorTest {
 		assertTrue( interval.addNumber(19) );
 		assertTrue( interval.addNumber(10) );
 		assertTrue( interval.addNumber(20) );
+		assertTrue( interval.getInterval().equals("[ 10 , 20 ]") );
 		interval.setHoldMaximum(false);
 		assertFalse( interval.addNumber(20) );
 		assertFalse( interval.addNumber(4) );
 		assertEquals( 5,interval.getSize() );
+		assertTrue( interval.getInterval().equals("[ 10 , 20 [") );
 	}
 	
 	@Test
@@ -49,21 +52,23 @@ public class IntervalProcessorTest {
 		assertTrue( interval.addNumber(20) );
 		assertFalse( interval.addNumber(4) );
 		assertEquals( 4,interval.getSize() );
+		assertTrue(interval.getInterval().equals("] 10 , 20 ]") );
 	}
 	
 	@Test
 	// Test interval as a real interval (positive) [10,20[
 	public void test4() {	
 		IntervalProcessor interval = new IntervalProcessor(10,20);
-		interval.setHoldMinimum(false);
+		interval.setHoldMaximum(false);
 		assertEquals( 0, interval.getSize() );
 		assertTrue( interval.addNumber(13) );
 		assertTrue( interval.addNumber(15) );
 		assertTrue( interval.addNumber(19) );
-		assertFalse( interval.addNumber(10) );
-		assertTrue( interval.addNumber(20) );
+		assertTrue( interval.addNumber(10) );
+		assertFalse( interval.addNumber(20) );
 		assertFalse( interval.addNumber(4) );
 		assertEquals( 4,interval.getSize() );
+		assertTrue( interval.getInterval().equals("[ 10 , 20 [") );
 	}
 	@Test
 	// Test interval calculation in limit cases  ]-10,0] and ]0,10]
@@ -92,5 +97,6 @@ public class IntervalProcessorTest {
 		assertFalse( interval.addNumber(-20) );
 		assertFalse( interval.addNumber(4) );
 		assertEquals( 4,interval.getSize() );
+		assertTrue( interval.getInterval().equals("] -20 , -10 ]") );
 	} 
 }

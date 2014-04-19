@@ -9,7 +9,9 @@ import org.junit.runners.Suite;
 
 @Suite.SuiteClasses({
 	DataProcessorTest.class,
-	SparkLineTest.class
+	SparkLineTest.class,
+	DotPlotTest.class,
+	IntervalProcessorTest.class
 })
 
 public class Systemtester {

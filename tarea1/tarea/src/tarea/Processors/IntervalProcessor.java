@@ -56,7 +56,7 @@ public class IntervalProcessor {
 		
 		StringBuilder  interval = new StringBuilder();
 		
-		if( holdMaximum ){
+		if( holdMinimum ){
 			interval.append("[ ");
 		}else{
 			interval.append("] ");
@@ -66,7 +66,7 @@ public class IntervalProcessor {
 		interval.append(" , ");
 		interval.append(String.valueOf(maximum));
 		
-		if( holdMinimum ){
+		if( holdMaximum ){
 			interval.append(" ]");
 		}else{
 			interval.append(" [");
