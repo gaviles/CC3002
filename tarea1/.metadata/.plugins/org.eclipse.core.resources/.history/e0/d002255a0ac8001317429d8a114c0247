@@ -1,6 +1,8 @@
-package tarea;
+package Tarea;
 
 import java.io.*;
+
+import Histograms.*;
 
 public class UserInterface {
 

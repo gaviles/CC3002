@@ -10,7 +10,4 @@ public class DotPlot extends Histogram {
 		textData = string;
 		histogramProcessor = new DotPlotProcessor(textData);
 	}
-
-	public DotPlot() {
-	}
 }

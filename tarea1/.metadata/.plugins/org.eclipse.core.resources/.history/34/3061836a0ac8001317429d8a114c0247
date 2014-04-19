@@ -2,6 +2,8 @@ package tarea;
 
 import java.io.*;
 
+import Histograms.*;
+
 public class UserInterface {
 
 	public static void main(String[] args) throws IOException {

@@ -2,7 +2,7 @@ package tarea;
 
 import java.util.ArrayList;
 
-import tarea.Histograms.*;
+import tarea.Histograms;
 
 public class HistogramCollection {
 	

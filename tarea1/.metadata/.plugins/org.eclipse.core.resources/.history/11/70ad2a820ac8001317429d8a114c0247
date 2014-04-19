@@ -2,7 +2,8 @@ package tarea;
 
 import java.util.ArrayList;
 
-import tarea.Histograms.*;
+import Histograms.DotPlot;
+import Histograms.SparkLine;
 
 public class HistogramCollection {
 	

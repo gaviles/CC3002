@@ -10,7 +10,4 @@ public class SparkLine extends Histogram {
 		textData = string;
 		histogramProcessor = new SparkLineProcessor(textData);
 	}
-
-	public SparkLine() {
-	}
 }
