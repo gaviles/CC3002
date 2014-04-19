@@ -13,4 +13,6 @@ public class DotPlotTest {
 	public void test() {
 		Histogram hist = new DotPlot("1,1,1,1,1,2,3,4,5,5,5,5,2,2,3");
 	}
+
+
 }

@@ -9,4 +9,8 @@
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="tarea.Histograms.DotPlot"/>
 <fullyQualifiedTypeName name="tarea.Histogram"/>
+<fullyQualifiedTypeName name="tarea.tests.DotPlotTest"/>
+<fullyQualifiedTypeName name="tarea.tests.IntervalProcessorTest"/>
+<fullyQualifiedTypeName name="java.util.Collections"/>
+<fullyQualifiedTypeName name="java.util.Comparator"/>
 </qualifiedTypeNameHistroy>
