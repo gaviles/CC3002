@@ -9,12 +9,18 @@ public class DotPlotProcessor implements HistogramProcessor {
 	private String[] intervalsValue;
 
 	public DotPlotProcessor(String string){
-		intervalsValue = new String[20];
-		intervalsValue[0] = "*";
-		for(int i = 1; i < 20 ; i++ ){
+		setIntervalsValue();
+		setData(string);	
+	}
+	public DotPlotProcessor() {
+		setIntervalsValue();
+	}
+	private void setIntervalsValue(){
+		intervalsValue = new String[21];
+		intervalsValue[0] = "";
+		for(int i = 1; i <= 20 ; i++ ){
 			intervalsValue[i] = intervalsValue[(i-1)].concat("*"); 
 		}
-		setData(string);	
 	}
 	
 	public void setData(String string){
@@ -24,7 +30,7 @@ public class DotPlotProcessor implements HistogramProcessor {
 	private void generateHistogram(){
 		
 		dataProcessor.sortValuesBySize();		
-		ArrayList<IntervalProcessor> intervals = getIntervals();
+		ArrayList<IntervalProcessor> intervals = getValues();
 		
 		histogram = "valor   |                       | frecuencia\n";
 		int maximumRpetitions = intervals.get(0).getSize();
@@ -32,7 +38,7 @@ public class DotPlotProcessor implements HistogramProcessor {
 		for(IntervalProcessor interval: intervals){
 			
 			String line = " ";
-			int percentage = interval.getSize()*20/maximumRpetitions -1;
+			int percentage = interval.getSize()*20/maximumRpetitions ;
 			line = fillWithSpaces( line.concat( interval.getInterval() ) , 8 );
 			line = line.concat("| ");
 			line = line.concat( intervalsValue[percentage] );
@@ -56,7 +62,7 @@ public class DotPlotProcessor implements HistogramProcessor {
 		return histogram;
 	}
 	
-	public ArrayList<IntervalProcessor> getIntervals(){
-		return dataProcessor.getIntervals();
+	public ArrayList<IntervalProcessor> getValues(){
+		return dataProcessor.getValues();
 	}
 }

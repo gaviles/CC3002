@@ -10,7 +10,7 @@ import org.junit.runners.Suite;
 @Suite.SuiteClasses({
 	DataProcessorTest.class,
 	SparkLineTest.class,
-	DotPlotTest.class,
+	DotPlotProcessorTest.class,
 	IntervalProcessorTest.class
 })
 

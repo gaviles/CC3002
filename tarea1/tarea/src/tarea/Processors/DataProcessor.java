@@ -12,6 +12,9 @@ public class DataProcessor {
 	private ArrayList<IntervalProcessor> intervals;
 	private ArrayList<IntervalProcessor> values;
 	
+	public DataProcessor(){
+	}
+	
 	public DataProcessor(String string){
 		setData(string); 
 	}
@@ -64,7 +67,7 @@ public class DataProcessor {
 			intervalMinimum = intervalMaximum - 10;
 		}
 		
-		addValueTo(number, intervals, true, true, intervalMaximum, intervalMinimum);
+		addValueTo(number, intervals, true, false, intervalMaximum, intervalMinimum);
 	}
 	
 	// add the number to a values collection to calculates the number of repetitions of the same number
@@ -142,5 +145,15 @@ public class DataProcessor {
 	}
 	public ArrayList<IntervalProcessor> getIntervals() {
 		return intervals;
+	}
+
+	public void sortValuesByRange() {
+		Collections.sort( intervals, new Comparator<IntervalProcessor>() {
+	        @Override
+	        public int compare(IntervalProcessor  interval1, IntervalProcessor  interval2)
+	        {
+	            return  interval1.getMinimum() - interval2.getMinimum();
+	        }
+	    });
 	}
 }

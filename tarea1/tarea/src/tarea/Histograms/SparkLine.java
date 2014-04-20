@@ -5,12 +5,12 @@ import tarea.Processors.SparkLineProcessor;
 
 public class SparkLine extends Histogram {
 
+	public SparkLine() {
+		textData = "";
+		histogramProcessor = new SparkLineProcessor();
+	}
 	public SparkLine(String string) {
-		super();
 		textData = string;
 		histogramProcessor = new SparkLineProcessor(textData);
-	}
-
-	public SparkLine() {
-	}
+	}	
 }

@@ -1,0 +1,99 @@
+package tarea.Processors;
+
+import java.util.ArrayList;
+
+public class SuperDotPlotProcessor implements HistogramProcessor {
+	
+	private DataProcessor dataProcessor;
+	private String histogram;
+	private String[] intervalsValue;
+
+	public SuperDotPlotProcessor(String string){
+		setIntervalsValue();
+		setData(string);	
+	}
+	public SuperDotPlotProcessor() {
+		setIntervalsValue();
+	}
+	private void setIntervalsValue(){
+		intervalsValue = new String[20];
+		intervalsValue[0] = "*";
+		for(int i = 1; i < 20 ; i++ ){
+			intervalsValue[i] = intervalsValue[(i-1)].concat("*"); 
+		}
+	}
+	
+	public void setData(String string){
+		dataProcessor = new DataProcessor(string);
+		generateHistogram();
+	}
+	private void generateHistogram(){
+		
+		dataProcessor.sortValuesBySize();		
+		ArrayList<IntervalProcessor> intervals = getIntervals();
+		
+		int maximumRepetitions = intervals.get(0).getSize();
+		
+		dataProcessor.sortValuesByRange();
+		intervals = getIntervals();
+		
+		int currentRange = intervals.get(0).getMinimum();
+		
+		histogram = "valor        |                       | frecuencia\n";
+		
+		for(IntervalProcessor interval: intervals){
+			
+			String line = getEmptyIntervals( currentRange, interval.getMinimum(), maximumRepetitions);
+			int percentage = interval.getSize()*20/maximumRepetitions ;
+			line = line.concat( getLine( interval, percentage ) );
+			histogram = histogram.concat(line).concat("\n");
+			currentRange = interval.getMinimum();
+		}
+	}
+	// returns the formatted string of the empty intervals
+	// that are between the current interval and the given internal minimum (next position in the for)
+	private String getEmptyIntervals(int currentRange, int nextRange, int maximumRepetitions){
+		
+		if( (currentRange + 10 ) < nextRange ){
+			
+			IntervalProcessor emptyInterval = new IntervalProcessor(currentRange,(currentRange+10));
+			emptyInterval.setHoldMinimum(false);
+			int percentage = 0;
+			String line = getLine(emptyInterval,percentage);
+			line = line.concat("\n");
+			line = line.concat( getEmptyIntervals( (currentRange+10), nextRange, maximumRepetitions ) );
+			return line;
+		}
+		return "";		
+	}
+	
+	// this function formats the output string of the histogram
+	// gets the percentage in format 0 to 19 with 19 represents the 100%
+	private String getLine(IntervalProcessor interval, int percentage ){
+		String line = "";
+		line = fillWithSpaces( line.concat( interval.getInterval() ) , 13 );
+		line = line.concat("| ");
+		line = line.concat( intervalsValue[percentage] );
+		line = fillWithSpaces(line, 37 );
+		line = line.concat("| ");
+		line = line.concat(String.valueOf(interval.getSize()));
+		return line;
+	}
+	
+	// This function fills the given string with spaces until get the 
+	// given number of length
+	private String fillWithSpaces(String string, int length){
+		if( string.length() < length ){
+			return fillWithSpaces(string.concat(" "), length);
+		}
+		return string;	
+	}
+	
+	public String getHistogram() {
+		return histogram;
+	}
+	
+	public ArrayList<IntervalProcessor> getIntervals(){
+		return dataProcessor.getIntervals();	
+	}
+}

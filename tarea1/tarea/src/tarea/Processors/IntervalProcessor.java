@@ -74,4 +74,10 @@ public class IntervalProcessor {
 
 		return interval.toString();
 	}
+	public int getMaximum() {
+		return maximum;
+	}
+	public int getMinimum() {
+		return minimum;
+	}
 }

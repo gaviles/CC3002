@@ -14,6 +14,8 @@ public class HistogramCollection {
 		histogramClases.add( sparkLine );
 		Histogram dotPlot = new DotPlot();
 		histogramClases.add( dotPlot );
+		Histogram superDotPlot = new SuperDotPlot();
+		histogramClases.add( superDotPlot );
 	}
 
 	public Histogram getHistogram(String histogramType, String histogramData) {

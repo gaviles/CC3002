@@ -14,12 +14,12 @@ public class UserInterface {
 		System.out.print(  "*     Type:             |  Number:          *\n");
 		System.out.print(  "*          SparkLine               1        *\n");
 		System.out.print(  "*          DotPlot                 2        *\n");
+		System.out.print(  "*        SuperDotPlot              3        *\n");
 		System.out.print(  "*********************************************\n");
-		System.out.print(" ?>");
 		
 		String histogramType =buffer.readLine();
 		
-		System.out.print("\n Por Favor ingrese los datos\n ?>");
+		System.out.print("\n Por Favor ingrese los datos\n");
 		
 		String histogramData = buffer.readLine();
 		
