@@ -80,7 +80,4 @@ public class IntervalProcessor {
 	public int getMinimum() {
 		return minimum;
 	}
-	public ArrayList<Integer> getData() {
-		return data;
-	}
 }

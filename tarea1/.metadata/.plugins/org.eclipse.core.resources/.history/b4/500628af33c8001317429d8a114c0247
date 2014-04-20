@@ -16,8 +16,6 @@ public class HistogramCollection {
 		histogramClases.add( dotPlot );
 		Histogram superDotPlot = new SuperDotPlot();
 		histogramClases.add( superDotPlot );
-		Histogram stemAndLeaf = new StemAndLeaf();
-		histogramClases.add( stemAndLeaf );
 	}
 
 	public Histogram getHistogram(String histogramType, String histogramData) {

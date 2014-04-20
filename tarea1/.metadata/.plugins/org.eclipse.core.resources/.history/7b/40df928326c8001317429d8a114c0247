@@ -15,7 +15,6 @@ public class UserInterface {
 		System.out.print(  "*          SparkLine               1        *\n");
 		System.out.print(  "*          DotPlot                 2        *\n");
 		System.out.print(  "*        SuperDotPlot              3        *\n");
-		System.out.print(  "*         StemAndLeaf              4        *\n");
 		System.out.print(  "*********************************************\n");
 		
 		String histogramType =buffer.readLine();

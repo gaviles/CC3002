@@ -1,0 +1,13 @@
+package tarea.Processors;
+
+public class StemAndLeafProcessor implements HistogramProcessor {
+	
+	public String getHistogram() {
+		
+	}
+	
+	public void setData(String string) {
+		
+	}
+
+}

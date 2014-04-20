@@ -6,11 +6,15 @@
 <fullyQualifiedTypeName name="tarea.DataProcessor"/>
 <fullyQualifiedTypeName name="tarea.Processors.SparkLineProcessor"/>
 <fullyQualifiedTypeName name="tarea.Processors.IntervalProcessor"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="tarea.Histograms.DotPlot"/>
 <fullyQualifiedTypeName name="tarea.Histogram"/>
 <fullyQualifiedTypeName name="tarea.tests.DotPlotTest"/>
 <fullyQualifiedTypeName name="tarea.tests.IntervalProcessorTest"/>
 <fullyQualifiedTypeName name="java.util.Collections"/>
 <fullyQualifiedTypeName name="java.util.Comparator"/>
+<fullyQualifiedTypeName name="tarea.Histograms.SparkLine"/>
+<fullyQualifiedTypeName name="tarea.Processors.DotPlotProcessor"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="tarea.Processors.SuperDotPlotProcessor"/>
+<fullyQualifiedTypeName name="tarea.Processors.StemAndLeafProcessor"/>
 </qualifiedTypeNameHistroy>
