@@ -1,27 +1,36 @@
 package tarea;
 
-import java.util.ArrayList;
-
-import tarea.Histograms.*;
+import tarea.histograms.*;
 
 public class HistogramCollection {
 	
-	private ArrayList<Histogram> histogramClases;
+	private Histogram	sparkLine, 
+						dotPlot,
+						superDotPlot,
+						stemAndLeaf;
 	
 	public HistogramCollection(){
-		histogramClases = new ArrayList<Histogram>();
-		Histogram sparkLine = new SparkLine();
-		histogramClases.add( sparkLine );
-		Histogram dotPlot = new DotPlot();
-		histogramClases.add( dotPlot );
-		Histogram superDotPlot = new SuperDotPlot();
-		histogramClases.add( superDotPlot );
-		Histogram stemAndLeaf = new StemAndLeaf();
-		histogramClases.add( stemAndLeaf );
+		sparkLine = new SparkLine();
+		dotPlot = new DotPlot();
+		superDotPlot = new SuperDotPlot();
+		stemAndLeaf = new StemAndLeaf();
 	}
 
-	public Histogram getHistogram(String histogramType, String histogramData) {
-		histogramClases.get( Integer.parseInt(histogramType)-1 ).setData(histogramData);
-		return histogramClases.get( Integer.parseInt(histogramType)-1 );
+	public Histogram getHistogram(String[] args) {
+		
+		if( args[0].equals("sparkline") ){
+			sparkLine.setData(args);
+			return sparkLine;
+		}
+		if( args[0].equals("dotplot") ){
+			dotPlot.setData(args);
+			return dotPlot;
+		}
+		if( args[0].equals("superdotplot") ){
+			superDotPlot.setData(args);
+			return superDotPlot;
+		}
+		stemAndLeaf.setData(args);
+		return stemAndLeaf;
 	}
 }

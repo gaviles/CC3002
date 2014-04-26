@@ -3,7 +3,8 @@ package tarea.tests;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
-import tarea.Processors.DataProcessor;
+
+import tarea.processors.DataProcessor;
 
 public class DataProcessorTest {
 	
@@ -28,7 +29,7 @@ public class DataProcessorTest {
 		assertTrue( dataProcessor.getInterval(6, 9 ) == 5 );
 		assertTrue( dataProcessor.getInterval(9, 9 ) == 8 );
 	}
-	
+	 
 	// Test the interval detector function extreme case (same number)
 	@Test
 	public void test3(){

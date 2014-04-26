@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 import org.junit.Test;
 
-import tarea.Processors.*;
+import tarea.processors.*;
 
 public class DotPlotProcessorTest {
 

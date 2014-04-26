@@ -1,7 +1,0 @@
-package tarea;
-
-public interface HistogramProcessor {
-	public String getHistogram( String string );
-	public void setData( String string );
-	public boolean isValid();
-}

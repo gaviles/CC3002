@@ -1,6 +1,0 @@
-package tarea;
-
-public class Histograma {
-	private String texto;
-	private Impresora 
-}

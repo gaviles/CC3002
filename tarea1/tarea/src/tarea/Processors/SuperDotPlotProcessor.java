@@ -1,4 +1,4 @@
-package tarea.Processors;
+package tarea.processors;
 
 import java.util.ArrayList;
 
@@ -22,7 +22,10 @@ public class SuperDotPlotProcessor implements HistogramProcessor {
 			intervalsValue[i] = intervalsValue[(i-1)].concat("*"); 
 		}
 	}
-	
+	public void setData(String[] args){
+		dataProcessor = new DataProcessor(args);
+		generateHistogram();
+	}
 	public void setData(String string){
 		dataProcessor = new DataProcessor(string);
 		generateHistogram();

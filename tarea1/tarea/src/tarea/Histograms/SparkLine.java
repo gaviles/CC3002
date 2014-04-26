@@ -1,7 +1,7 @@
-package tarea.Histograms;
+package tarea.histograms;
 
 import tarea.Histogram;
-import tarea.Processors.SparkLineProcessor;
+import tarea.processors.SparkLineProcessor;
 
 public class SparkLine extends Histogram {
 
@@ -12,5 +12,8 @@ public class SparkLine extends Histogram {
 	public SparkLine(String string) {
 		textData = string;
 		histogramProcessor = new SparkLineProcessor(textData);
-	}	
+	}
+	public SparkLine(String[] args) {
+		histogramProcessor = new SparkLineProcessor(args);
+	}
 }

@@ -1,4 +1,4 @@
-package tarea.Processors;
+package tarea.processors;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -18,6 +18,9 @@ public class DataProcessor {
 	public DataProcessor(String string){
 		setData(string); 
 	}
+	public DataProcessor(String[] args){
+		parseData(args); 
+	}
 	public int[] parseData(){
 		return parseData(textData);
 	}
@@ -26,10 +29,13 @@ public class DataProcessor {
 		data = parseData();
 	}
 	public int[] parseData(String string){
+		String[] data = (" ,".concat(string)).split(",");
+		return parseData(data);
+	}
 		
-		String[] data = string.split(",");		
+	public int[] parseData(String[] data){
 		
-		int[] numbers = new int[data.length];
+		int[] numbers = new int[data.length-1];
 		
 		intervals = new ArrayList<IntervalProcessor>();
 		values = new ArrayList<IntervalProcessor>();
@@ -37,18 +43,18 @@ public class DataProcessor {
 		maximum = Integer.MIN_VALUE;
 		minimum = Integer.MAX_VALUE;
 		
-		for(int i = 0; i < data.length ; i++ ){
+		for(int i = 1; i < data.length ; i++ ){
 			
-			numbers[i] = Integer.parseInt(data[i]);
+			numbers[i-1] = Integer.parseInt(data[i]);
 			
-			addToIntervals(numbers[i]);
-			addToValues(numbers[i]);
+			addToIntervals(numbers[i-1]);
+			addToValues(numbers[i-1]);
 			
-			if(numbers[i]>maximum){
-				maximum = numbers[i];
+			if(numbers[i-1]>maximum){
+				maximum = numbers[i-1];
 			}
-			if(numbers[i]<minimum){
-				minimum = numbers[i];
+			if(numbers[i-1]<minimum){
+				minimum = numbers[i-1];
 			}
 		}
 		

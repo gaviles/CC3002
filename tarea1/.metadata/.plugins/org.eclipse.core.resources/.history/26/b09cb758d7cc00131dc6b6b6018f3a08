@@ -1,0 +1,28 @@
+package tarea;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import tarea.Histograms.*;
+
+public class HistogramCollection {
+	
+	private Histogram	sparkLine, 
+						dotPlot,
+						superDotPlot,
+						stemAndLeaf;
+	
+	public HistogramCollection(){
+		sparkLine = new SparkLine();
+		dotPlot = new DotPlot();
+		superDotPlot = new SuperDotPlot();
+		stemAndLeaf = new StemAndLeaf();
+	}
+
+	public Histogram getHistogram(String[] args ) {
+		if( args[0].equals("sparkline") ) return sparkLine.setData(args);
+		if( args[0].equals("dotplot") ) return dotPlot.setData(args);
+		if( args[0].equals("superdotplot") ) return superDotPlot.setData(args);
+		if( args[0].equals("stemandleaf") ) return stemAndLeaf.setData(args);
+	}
+}

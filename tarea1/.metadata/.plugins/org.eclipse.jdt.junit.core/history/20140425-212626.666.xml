@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="Systemtester" project="tarea" tests="16" started="16" failures="0" errors="0" ignored="0">
+  <testsuite name="tarea.tests.Systemtester" time="0.0">
+    <testsuite name="tarea.tests.DataProcessorTest" time="0.0">
+      <testcase name="test" classname="tarea.tests.DataProcessorTest" time="0.0"/>
+      <testcase name="test2" classname="tarea.tests.DataProcessorTest" time="0.0"/>
+      <testcase name="test3" classname="tarea.tests.DataProcessorTest" time="0.0"/>
+      <testcase name="test4" classname="tarea.tests.DataProcessorTest" time="0.0"/>
+    </testsuite>
+    <testsuite name="tarea.tests.SparkLineTest" time="0.0">
+      <testcase name="test1" classname="tarea.tests.SparkLineTest" time="0.0"/>
+      <testcase name="test2" classname="tarea.tests.SparkLineTest" time="0.0"/>
+      <testcase name="test3" classname="tarea.tests.SparkLineTest" time="0.0"/>
+      <testcase name="test4" classname="tarea.tests.SparkLineTest" time="0.0"/>
+      <testcase name="test5" classname="tarea.tests.SparkLineTest" time="0.0"/>
+    </testsuite>
+    <testsuite name="tarea.tests.DotPlotProcessorTest" time="0.0">
+      <testcase name="test" classname="tarea.tests.DotPlotProcessorTest" time="0.0"/>
+    </testsuite>
+    <testsuite name="tarea.tests.IntervalProcessorTest" time="0.0">
+      <testcase name="test1" classname="tarea.tests.IntervalProcessorTest" time="0.0"/>
+      <testcase name="test2" classname="tarea.tests.IntervalProcessorTest" time="0.0"/>
+      <testcase name="test3" classname="tarea.tests.IntervalProcessorTest" time="0.0"/>
+      <testcase name="test4" classname="tarea.tests.IntervalProcessorTest" time="0.0"/>
+      <testcase name="test5" classname="tarea.tests.IntervalProcessorTest" time="0.0"/>
+      <testcase name="test6" classname="tarea.tests.IntervalProcessorTest" time="0.0"/>
+    </testsuite>
+  </testsuite>
+</testrun>

@@ -1,7 +1,7 @@
-package tarea.Histograms;
+package tarea.histograms;
 
 import tarea.Histogram;
-import tarea.Processors.StemAndLeafProcessor;
+import tarea.processors.StemAndLeafProcessor;
 
 public class StemAndLeaf extends Histogram {
 

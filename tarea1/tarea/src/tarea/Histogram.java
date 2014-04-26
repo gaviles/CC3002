@@ -1,20 +1,34 @@
 package tarea;
 
-import tarea.Processors.HistogramProcessor;
+import tarea.processors.HistogramProcessor;
 
 public abstract class Histogram {
 	protected String textData;
 	protected HistogramProcessor histogramProcessor;
+	protected static Histogram histogram;
 	
-	public Histogram(){
-		super();
+	public static void main( String[] args ){
+		
+		if( args.length > 2){
+			HistogramCollection histogramCollection = new HistogramCollection();
+			
+			Histogram histogram = histogramCollection.getHistogram(args);
+			System.out.print(histogram.getHistogram());
+		}	
 	}
+	public HistogramProcessor  getHistogramProcessor(){
+		return histogramProcessor;
+	}
+	
 	public String getHistogram(){
 		return histogramProcessor.getHistogram();
 	}
 	public void setData(String string){
 		textData = string;
 		histogramProcessor.setData(textData);
+	}
+	public void setData(String[] args){
+		histogramProcessor.setData(args);
 	}
 	public void print(){
 		System.out.println(getHistogram());

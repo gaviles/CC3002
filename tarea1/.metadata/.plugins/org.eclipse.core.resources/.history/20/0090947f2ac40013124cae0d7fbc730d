@@ -1,6 +1,0 @@
-package tarea;
-
-public interface Printer {
-	
-	public String getPrint();
-}

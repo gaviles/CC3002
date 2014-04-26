@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="DataProcessorTest" project="tarea" tests="4" started="4" failures="0" errors="0" ignored="0">
+  <testsuite name="tarea.tests.DataProcessorTest" time="0.0">
+    <testcase name="test" classname="tarea.tests.DataProcessorTest" time="0.0"/>
+    <testcase name="test2" classname="tarea.tests.DataProcessorTest" time="0.0"/>
+    <testcase name="test3" classname="tarea.tests.DataProcessorTest" time="0.0"/>
+    <testcase name="test4" classname="tarea.tests.DataProcessorTest" time="0.0"/>
+  </testsuite>
+</testrun>

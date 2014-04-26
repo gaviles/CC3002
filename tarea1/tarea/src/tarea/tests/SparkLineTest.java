@@ -1,11 +1,11 @@
 package tarea.tests;
 
 import static org.junit.Assert.*;
+import tarea.Histogram;
 
 import org.junit.Test;
 
-import tarea.Histogram;
-import tarea.Histograms.SparkLine;
+import tarea.histograms.SparkLine;
 
 public class SparkLineTest {
 	

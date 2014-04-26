@@ -1,4 +1,4 @@
-package tarea.Processors;
+package tarea.processors;
 
 
 public class SparkLineProcessor implements HistogramProcessor {
@@ -16,12 +16,22 @@ public class SparkLineProcessor implements HistogramProcessor {
 		generateHistogram();
 	}
 	
+	public SparkLineProcessor(String[] args){
+		setIntervalsValue();
+		dataProcessor = new DataProcessor(args);
+		generateHistogram();
+	}
+	
+	// Generates the *** intervals values 
 	public void setIntervalsValue(){
 		intervalsValue = new char[9];
 		for(int i = 0; i < 9 ; i++ ){
-			
 			intervalsValue[i] = (char)(9601+i); 
 		}
+	}
+	public void setData(String[] data){
+		dataProcessor = new DataProcessor(data);
+		generateHistogram();
 	}
 	public void setData(String string){
 		dataProcessor = new DataProcessor(string);

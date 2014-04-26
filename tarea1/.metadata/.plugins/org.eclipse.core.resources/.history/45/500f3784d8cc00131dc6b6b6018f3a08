@@ -1,0 +1,45 @@
+package tarea;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Set;
+
+import tarea.Histograms.DotPlot;
+import tarea.Histograms.SparkLine;
+import tarea.Histograms.StemAndLeaf;
+import tarea.Histograms.SuperDotPlot;
+import tarea.Processors.HistogramProcessor;
+
+public abstract class Histogram {
+	protected String textData;
+	protected HistogramProcessor histogramProcessor;
+	protected Histogram histogram;
+	
+	public static void main( String[] args ){
+		
+		if( args.length > 2){
+			HistogramCollection histogramCollection = new HistogramCollection();
+			
+			histogram = histogramCollection.getHistogram(args);
+			histogramProcessor = histogram.getHistogramProcessor();
+		}	
+	}
+	public HistogramProcessor  getHistogramProcessor(){
+		return histogramProcessor;
+	}
+	
+	
+	public String getHistogram(){
+		return histogramProcessor.getHistogram();
+	}
+	public void setData(String string){
+		textData = string;
+		histogramProcessor.setData(textData);
+	}
+	public Histogram setData(String[] args){
+		histogramProcessor.setData(args);
+	}
+	public void print(){
+		System.out.println(getHistogram());
+	}
+}

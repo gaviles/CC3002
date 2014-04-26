@@ -1,7 +1,7 @@
-package tarea.Histograms;
+package tarea.histograms;
 
 import tarea.Histogram;
-import tarea.Processors.SuperDotPlotProcessor;
+import tarea.processors.SuperDotPlotProcessor;
 
 public class SuperDotPlot extends Histogram {
 

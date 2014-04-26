@@ -1,0 +1,75 @@
+package tarea.Processors;
+
+import java.util.ArrayList;
+
+public class StemAndLeafProcessor implements HistogramProcessor {
+	
+	private DataProcessor dataProcessor;
+	private String histogram;
+
+	public StemAndLeafProcessor(String string){
+		setData(string);	
+	}
+	public StemAndLeafProcessor() {
+	}
+	public void setData(String[] args){
+		dataProcessor = new DataProcessor(args);
+		generateHistogram();
+	}
+	public void setData(String string){
+		dataProcessor = new DataProcessor(string);
+		generateHistogram();
+	}
+	private void generateHistogram(){
+		
+		dataProcessor.sortValuesByRange();		
+		ArrayList<IntervalProcessor> intervals = getIntervals();
+		
+		histogram = "valor   |                       | frecuencia\n";
+		
+		for(IntervalProcessor interval: intervals){
+			
+			String line = " ";
+			
+			line = fillWithSpaces( line.concat( String.valueOf( (int)(interval.getMinimum()/10) ) ) , 8 );
+			line = line.concat("| ");
+			line = line.concat( getRests( interval ) );
+			line = fillWithSpaces(line, 32 );
+			line = line.concat("| ");
+			line = line.concat(String.valueOf(interval.getSize()));
+			histogram = histogram.concat(line).concat("\n");			
+		}
+	}
+	
+	// this function returns the list of rest of the numbers in the interval
+	private String getRests( IntervalProcessor interval ){
+		
+		String rests = "";
+		for( Integer number: interval.getData() ){
+			
+			if( interval.getMinimum() == 0 ){
+				rests = rests.concat( String.valueOf( number ) ).concat(" ");
+			}else{
+				rests = rests.concat( String.valueOf( number % interval.getMinimum()) ).concat(" ");
+			}
+		}
+		return rests;
+	}
+	
+	// This function fills the given string with spaces until get the 
+	// given number of length
+	private String fillWithSpaces(String string, int length){
+		if( string.length() < length ){
+			return fillWithSpaces(string.concat(" "), length);
+		}
+		return string;	
+	}
+	
+	public String getHistogram() {
+		return histogram;
+	}
+	
+	public ArrayList<IntervalProcessor> getIntervals(){
+		return dataProcessor.getIntervals();
+	}
+}

@@ -1,7 +1,7 @@
-package tarea.Histograms;
+package tarea.histograms;
 
 import tarea.Histogram;
-import tarea.Processors.DotPlotProcessor;
+import tarea.processors.DotPlotProcessor;
 
 public class DotPlot extends Histogram {
 	

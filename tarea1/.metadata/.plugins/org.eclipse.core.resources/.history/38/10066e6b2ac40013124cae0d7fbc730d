@@ -1,6 +1,0 @@
-package tarea;
-
-public interface Impresora {
-	
-	public String imprime();
-}
